@@ -11,16 +11,17 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ml-auto mr-5">
-          <li class="nav-item active">
-            <router-link to="/" class="nav-link">Movies</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="Favourites" class="nav-link">Favourites</router-link>
-          </li>
-          <li class="nav-item"><router-link to="WatchList" class="nav-link">WatchList</router-link></li>
-          <li class="nav-item"><router-link to="/" class="nav-link">Logout</router-link></li>
-        </ul>
+        <form class="form-inline my-2 my-lg-0 ml-auto">
+          <input
+            class="form-control mr-sm-4"
+            type="search"
+            placeholder="Movie Title"
+            aria-label="Search"
+          />
+          <button class="btn btn-light text-info my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
       </div>
     </nav>
   </header>
