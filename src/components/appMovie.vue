@@ -20,7 +20,6 @@
           <p class="card-text">
             <router-link :to="`/${movie.imdbID}`" class="btn btn-info text-right">Movie's Details</router-link>
           </p>
-          
         </div>
       </div>
     </div>
