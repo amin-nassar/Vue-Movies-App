@@ -1,7 +1,9 @@
 <template>
   <header>
     <nav class="navbar navbar-expand-sm navbar-dark bg-info">
-      <router-link to="/" class="navbar-brand">MoviesApp</router-link>
+      <router-link to="/" class="navbar-brand font-weight-bold"
+        >MoviesApp</router-link
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -10,7 +12,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarMenu">
+      <div
+        v-if="!$route.params.id"
+        class="collapse navbar-collapse"
+        id="navbarMenu"
+      >
         <form class="form-inline my-2 my-lg-0 ml-auto">
           <input
             class="form-control mr-sm-4"
@@ -42,8 +48,10 @@ export default {
   },
   methods: {
     loadMovies() {
-      if (this.searchText != "")
+      if (this.searchText != "") {
         this.$store.dispatch("getMoviesBySearch", this.searchText);
+        this.searchText = "";
+      }
     }
   }
 };
