@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="navbar navbar-expand-sm navbar-dark bg-info">
-      <a href="#" class="navbar-brand">MoviesApp</a>
+      <router-link to="/" class="navbar-brand">MoviesApp</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -13,13 +13,13 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto mr-5">
           <li class="nav-item active">
-            <a href="#" class="nav-link">Movies</a>
+            <router-link to="/" class="nav-link">Movies</router-link>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Favourites</a>
+            <router-link to="Favourites" class="nav-link">Favourites</router-link>
           </li>
-          <li class="nav-item"><a href="#" class="nav-link">WatchList</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
+          <li class="nav-item"><router-link to="WatchList" class="nav-link">WatchList</router-link></li>
+          <li class="nav-item"><router-link to="/" class="nav-link">Logout</router-link></li>
         </ul>
       </div>
     </nav>
