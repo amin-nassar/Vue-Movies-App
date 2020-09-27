@@ -17,8 +17,13 @@
             type="search"
             placeholder="Movie Title"
             aria-label="Search"
+            v-model="searchText"
           />
-          <button class="btn btn-light text-info my-2 my-sm-0" type="submit">
+          <button
+            class="btn btn-light text-info my-2 my-sm-0"
+            type="submit"
+            @click.prevent="loadMovies"
+          >
             Search
           </button>
         </form>
@@ -26,3 +31,20 @@
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  name: "app-header",
+  data() {
+    return {
+      searchText: ""
+    };
+  },
+  methods: {
+    loadMovies() {
+      if (this.searchText != "")
+        this.$store.dispatch("getMoviesBySearch", this.searchText);
+    }
+  }
+};
+</script>
