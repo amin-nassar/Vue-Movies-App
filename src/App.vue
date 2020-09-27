@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Vue Js Test With Github</h1>
+    <h1>Vue JS</h1>
   </div>
 </template>
 
