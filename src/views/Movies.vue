@@ -16,19 +16,18 @@ import appMovie from "../components/appMovie";
 export default {
   name: "Movies",
   data() {
-    return {
-    };
+    return {};
   },
   components: {
     "app-movie": appMovie
   },
   computed: {
-    movies(){
-      return this.$store.getters.getMovies 
+    movies() {
+      return this.$store.getters.getMovies;
     }
   },
-  created(){
-    this.$store.dispatch('getMoviesBySearch');
+  created() {
+    this.$store.dispatch("getMoviesBySearch");
   }
 };
 </script>

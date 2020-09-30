@@ -40,10 +40,10 @@
               :key="actor"
               class="list-group-item bg-info d-flex justify-content-between align-items-center"
             >
-              {{actor}}
+              {{ actor }}
             </li>
           </ul>
-          <hr>
+          <hr />
           <h2>Director/s</h2>
           <ul class="list-group">
             <li
@@ -51,10 +51,10 @@
               :key="director"
               class="list-group-item bg-info d-flex justify-content-between align-items-center"
             >
-              {{director}}
+              {{ director }}
             </li>
           </ul>
-          <hr>
+          <hr />
           <h2>Writer/s</h2>
           <ul class="list-group">
             <li
@@ -62,7 +62,7 @@
               :key="writer"
               class="list-group-item bg-info d-flex justify-content-between align-items-center"
             >
-              {{writer}}
+              {{ writer }}
             </li>
           </ul>
         </div>
@@ -83,16 +83,16 @@ export default {
   },
   computed: {
     ratings() {
-      return this.movie.Ratings
+      return this.movie.Ratings;
     },
     actors() {
-      return this.movie.Actors.split(',')
+      return this.movie.Actors.split(",");
     },
-    writers(){
-      return this.movie.Writer.split(',')
+    writers() {
+      return this.movie.Writer.split(",");
     },
-    directors(){
-      return this.movie.Director.split(',')
+    directors() {
+      return this.movie.Director.split(",");
     }
   },
   created() {

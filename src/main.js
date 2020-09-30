@@ -4,19 +4,19 @@ import router from "./router";
 import store from "./store";
 
 // Import Animate Css
-import 'animate.css'
+import "animate.css";
 
 // Import Bootstrap Js
-import 'jquery';
-import 'bootstrap';
+import "jquery";
+import "bootstrap";
 
 // Import Bootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount("#app");

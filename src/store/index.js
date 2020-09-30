@@ -15,14 +15,16 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    log() {
-      return;
+    addMovie(state, movie) {
+      state.movies.push(movie);
+    },
+    clearMovies(state){
+      state.movies = []
     }
   },
   actions: {
     getMoviesBySearch({ commit }, search = "Far") {
-      commit("log");
-      state.movies = [];
+      commit('clearMovies');
       axios
         .get(`http://www.omdbapi.com/?&apikey=thewdb&s=${search}`)
         .then((response) => {
@@ -30,7 +32,7 @@ export default new Vuex.Store({
             axios
               .get(`http://www.omdbapi.com/?&apikey=thewdb&i=${movie.imdbID}`)
               .then((response) => {
-                state.movies.push(response.data);
+                commit('addMovie', response.data)
               });
           });
         });
