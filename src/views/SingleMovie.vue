@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container mt-3 bg-info p-3 rounded-lg">
+    <div class="container mt-3 p-3 rounded-lg" :class="backgroundThemeClass">
       <div class="row">
         <div class="col-md-4">
           <img :src="movie.Poster" :alt="movie.Title" />
@@ -16,7 +16,8 @@
             <li
               v-for="rating in ratings"
               :key="rating.Source"
-              class="list-group-item bg-info d-flex justify-content-between align-items-center"
+              class="list-group-item d-flex justify-content-between align-items-center"
+              :class="backgroundThemeClass"
             >
               {{ rating.Source }}
               <span class="badge badge-light p-1 badge-pill">{{
@@ -27,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt-3 bg-info p-3 rounded-lg">
+    <div class="container mt-3 p-3 rounded-lg" :class="backgroundThemeClass">
       <div class="row">
         <div class="col-md-12 text-light">
           <h2 class="text-left">Movie Plot</h2>
@@ -38,7 +39,8 @@
             <li
               v-for="actor in actors"
               :key="actor"
-              class="list-group-item bg-info d-flex justify-content-between align-items-center"
+              class="list-group-item d-flex justify-content-between align-items-center"
+              :class="backgroundThemeClass"
             >
               {{ actor }}
             </li>
@@ -49,7 +51,8 @@
             <li
               v-for="director in directors"
               :key="director"
-              class="list-group-item bg-info d-flex justify-content-between align-items-center"
+              class="list-group-item d-flex justify-content-between align-items-center"
+              :class="backgroundThemeClass"
             >
               {{ director }}
             </li>
@@ -60,7 +63,8 @@
             <li
               v-for="writer in writers"
               :key="writer"
-              class="list-group-item bg-info d-flex justify-content-between align-items-center"
+              class="list-group-item d-flex justify-content-between align-items-center"
+              :class="backgroundThemeClass"
             >
               {{ writer }}
             </li>
@@ -93,6 +97,9 @@ export default {
     },
     directors() {
       return this.movie.Director.split(",");
+    },
+    backgroundThemeClass(){
+      return this.$store.getters.getBackgroundThemeClass;
     }
   },
   created() {

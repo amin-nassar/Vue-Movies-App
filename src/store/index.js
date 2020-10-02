@@ -5,13 +5,17 @@ import axios from "axios";
 Vue.use(Vuex);
 
 let state = {
-  movies: []
+  movies: [],
+  backgroundThemeClass: 'bg-info'
 };
 export default new Vuex.Store({
   state,
   getters: {
     getMovies() {
       return state.movies;
+    },
+    getBackgroundThemeClass(){
+      return state.backgroundThemeClass;
     }
   },
   mutations: {
@@ -20,6 +24,9 @@ export default new Vuex.Store({
     },
     clearMovies(state){
       state.movies = []
+    },
+    changeTheme(state , className){
+      state.backgroundThemeClass = className;
     }
   },
   actions: {
@@ -36,6 +43,9 @@ export default new Vuex.Store({
               });
           });
         });
+    },
+    changeTheme(context, className) {
+      context.commit('changeTheme', className);
     }
   },
   modules: {}

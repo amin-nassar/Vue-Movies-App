@@ -1,5 +1,8 @@
 <template>
-  <div class="card mx-auto my-3 col-xl-6 col-sm-10 col-10" style="max-width: 600px;">
+  <div
+    class="card mx-auto my-3 col-xl-6 col-sm-10 col-10"
+    style="max-width: 600px;"
+  >
     <div class="row no-gutters">
       <div class="col-md-4">
         <img :src="movie.Poster" class="card-img" alt="Tenet" />
